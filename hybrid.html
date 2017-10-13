@@ -187,120 +187,9 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 						</ul>
 					</div>
 				</div>
-				<div class="ty-range-model__pricing col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3 col-lg-4 col-lg-push-4" style="border-top-color: black">
-					<div class="ty-range-model-pricing" data-ty-driveaway-price>
-						<div class="ty-range-model-pricing__page" data-ng-show="driveawayPrice.postcode && ( driveawayPrice.dataError || driveawayPrice.serverError )" data-ng-cloak>
-							<div class="ty-range-model-pricing__enter-location" ty-geo-locate-search>
-								<div class="ty-range-model-pricing-enter-location">
-									<span class="ty-range-model-pricing-enter-location__label-line">We were unable to get a driveaway price this time.</span>
-									<a                                              href="http://www.toyota.com.au/forms/contact-a-dealer"
-									>
-									<span class="ty-range-model-pricing-enter-location__label">Please contact your preferred dealer for more information.</span>
-								</a>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="ty-range-model-pricing__page" data-ng-show="driveawayPrice.postcode && !driveawayPrice.serverError && !driveawayPrice.dataError" data-ng-cloak>
-
-						<div class="ty-range-model-pricing__driveaway-row">
-							<div class="ty-range-model-pricing__driveaway-col">
-
-								<div class="ty-range-model-pricing-item" data-ng-cloak
-								data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)"
-								data-ng-class="{'is-label-on-left-for-desktop': !driveawayPrice.financeInfoAvailable}">
-								<h3 class="ty-range-model-pricing-item__label">
-									<span data-ng-show="!driveawayPrice.financeInfoAvailable">
-										<span class="ty-range-model-pricing-item__label-line-for-desktop">Driveaway</span>
-										<span class="ty-range-model-pricing-item__label-line-for-desktop">from</span>
-									</span>
-									<span data-ng-show="driveawayPrice.financeInfoAvailable">
-										Driveaway from
-									</span>
-								</h3>
-								<p class="ty-range-model-pricing-item__body">
-									<span class="ty-range-model-pricing-item__value">
-										{{driveawayPrice.price | formatPrice }}<small data-ng-bind-html="((driveawayPrice.disclaimerOverride != '')?driveawayPrice.disclaimerOverride:'[A5]')  | formatSuper"></small>                                                
-									</span>
-								</p>
-							</div>
-
-							<span class="ty-range-model-pricing-item__loading"
-							data-ng-show="driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-							<ty-loading-spinner medium></ty-loading-spinner>
-						</span>
-
-					</div>
-				</div>
-				<div class="ty-range-model-pricing__finance-row" data-ng-show="driveawayPrice.financeInfoAvailable">
-					<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--weekly" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-						<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-							<h4 class="ty-range-model-pricing-item__label">
-								<a data-ng-if="financingOptions.leftLink" data-ng-href="{{financingOptions.leftLink}}" data-ng-bind-html="financingOptions.leftText | formatSuper"></a>
-								<span data-ng-if="!financingOptions.leftLink" data-ng-bind-html="financingOptions.leftText | formatSuper"></span>
-							</h4>
-							<p class="ty-range-model-pricing-item__body">
-								<span class="ty-range-model-pricing-item__value">
-									<span data-ng-bind-html="financingOptions.priceWeek | formatSuper"></span><small data-ng-bind-html="financingOptions.priceWeekText | formatSuper"></small>
-								</span>                                            
-							</p>
-						</div>
-
-					</div>
-					<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--comparison-rate" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-						<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-							<h4 class="ty-range-model-pricing-item__label">
-								<a data-ng-if="financingOptions.midLink" data-ng-href="{{financingOptions.midLink}}" data-ng-bind-html="financingOptions.midText | formatSuper"></a>
-								<span data-ng-if="!financingOptions.midLink" data-ng-bind-html="financingOptions.midText | formatSuper"></span>
-							</h4>
-							<p class="ty-range-model-pricing-item__body">
-								<span class="ty-range-model-pricing-item__value">
-									<span data-ng-bind-html="financingOptions.compRate | formatSuper"></span><small data-ng-bind-html="financingOptions.compRateText | formatSuper"></small>
-								</span>                                            
-							</p>
-						</div>
-
-					</div>
-					<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--loan-term" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-						<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-							<h4 class="ty-range-model-pricing-item__label">
-								<a data-ng-if="financingOptions.rightLink" data-ng-href="{{financingOptions.rightLink}}" data-ng-bind-html="financingOptions.rightText | formatSuper"></a>
-								<span data-ng-if="!financingOptions.rightLink" data-ng-bind-html="financingOptions.rightText | formatSuper"></span>
-							</h4>
-							<p class="ty-range-model-pricing-item__body">
-								<span class="ty-range-model-pricing-item__value">
-									<span data-ng-bind-html="financingOptions.loanTerm | formatSuper"></span><small data-ng-bind-html="financingOptions.loanTermText | formatSuper"></small>
-								</span>                                            
-							</p>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="ty-range-model-pricing__location-fineprint">
-
-					<div class="ty-icon-label">
-						<span class="ty-icon-label__icon">
-							<span class="ty-range-model-pricing__location-fineprint-icon">
-								<svg class="ty-svg-icon ty-svg-icon--replace-fill" width="17px" height="23px" viewBox="0 0 17 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<path d="M8.5,5.32907052e-15 C3.81779661,5.32907052e-15 0,3.80074442 0,8.46203474 C0,12.191067 5.25847458,19.0037221 7.49152542,21.7287841 C7.70762712,22.0156328 8.13983051,22.2307692 8.5,22.2307692 C8.86016949,22.2307692 9.29237288,22.0873449 9.50847458,21.7287841 C11.7415254,19.0037221 17,12.191067 17,8.46203474 C17,3.80074442 13.1822034,5.32907052e-15 8.5,5.32907052e-15 Z M11.0932203,7.81662531 C11.0932203,9.25086849 9.94067797,10.398263 8.5,10.398263 C7.05932203,10.398263 5.90677966,9.25086849 5.90677966,7.81662531 C5.90677966,6.38238213 7.05932203,5.23498759 8.5,5.23498759 C9.94067797,5.23498759 11.0932203,6.38238213 11.0932203,7.81662531 Z" id="Shape"></path>
-								</svg>
-							</span>
-						</span>
-					</div>
-
-				</div>
 			</div>
-
 		</div>
 	</div>
-</div>
-</div>
-</div>
 </div>
 
 </div>
@@ -341,9 +230,9 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 					</div>
 				</div>
 
-</div>
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 </div>
@@ -379,139 +268,11 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 							<li class="ty-range-model-specs__item">4.1L/100KM</li>
 							<li class="ty-range-model-specs__item">60/40 split fold rear seats</li>
 						</ul>
-						<ul class="ty-range-model-specs__container">
-						</ul>
 					</div>
 				</div>
-				<div class="ty-range-model__pricing col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3 col-lg-4 col-lg-push-4" style="border-top-color: black">
-					<div class="ty-range-model-pricing" data-ty-driveaway-price>
-
-
-						<div class="ty-range-model-pricing__page" data-ng-show="!driveawayPrice.postcode" data-ng-cloak>
-							<div class="ty-range-model-pricing__enter-location" ty-geo-locate-search>
-
-								<div class="ty-range-model-pricing-enter-location">
-
-									<div class="ty-icon-label ty-icon-label--spacing-large ty-icon-label--align-top">
-										<span class="ty-icon-label__icon">
-											<span class="ty-range-model-pricing-enter-location__icon">
-												<svg class="ty-svg-icon ty-svg-icon--replace-fill" width="17px" height="23px" viewBox="0 0 17 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-													<path d="M8.5,5.32907052e-15 C3.81779661,5.32907052e-15 0,3.80074442 0,8.46203474 C0,12.191067 5.25847458,19.0037221 7.49152542,21.7287841 C7.70762712,22.0156328 8.13983051,22.2307692 8.5,22.2307692 C8.86016949,22.2307692 9.29237288,22.0873449 9.50847458,21.7287841 C11.7415254,19.0037221 17,12.191067 17,8.46203474 C17,3.80074442 13.1822034,5.32907052e-15 8.5,5.32907052e-15 Z M11.0932203,7.81662531 C11.0932203,9.25086849 9.94067797,10.398263 8.5,10.398263 C7.05932203,10.398263 5.90677966,9.25086849 5.90677966,7.81662531 C5.90677966,6.38238213 7.05932203,5.23498759 8.5,5.23498759 C9.94067797,5.23498759 11.0932203,6.38238213 11.0932203,7.81662531 Z" id="Shape"></path>
-												</svg>
-											</span>
-										</span>
-										<span class="ty-icon-label__label">
-											<a class="ty-range-model-pricing-enter-location__label" ng-click="showChangeLocationModal()">
-												Enter your location to view pricing
-											</a>
-										</span>
-									</div>
-								</div>
-
-							</div>
-						</div>                        
-						<div class="ty-range-model-pricing__page" data-ng-show="driveawayPrice.postcode && !driveawayPrice.serverError && !driveawayPrice.dataError" data-ng-cloak>
-
-							<div class="ty-range-model-pricing__driveaway-row">
-								<div class="ty-range-model-pricing__driveaway-col">
-
-									<div class="ty-range-model-pricing-item" data-ng-cloak
-									data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)"
-									data-ng-class="{'is-label-on-left-for-desktop': !driveawayPrice.financeInfoAvailable}">
-									<h3 class="ty-range-model-pricing-item__label">
-										<span data-ng-show="!driveawayPrice.financeInfoAvailable">
-											<span class="ty-range-model-pricing-item__label-line-for-desktop">Driveaway</span>
-											<span class="ty-range-model-pricing-item__label-line-for-desktop">from</span>
-										</span>
-										<span data-ng-show="driveawayPrice.financeInfoAvailable">
-											Driveaway from
-										</span>
-									</h3>
-									<p class="ty-range-model-pricing-item__body">
-										<span class="ty-range-model-pricing-item__value">
-											{{driveawayPrice.price | formatPrice }}<small data-ng-bind-html="((driveawayPrice.disclaimerOverride != '')?driveawayPrice.disclaimerOverride:'[A1]')  | formatSuper"></small>                                                
-										</span>
-									</p>
-								</div>
-
-								<span class="ty-range-model-pricing-item__loading"
-								data-ng-show="driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-								<ty-loading-spinner medium></ty-loading-spinner>
-							</span>
-
-						</div>
-					</div>
-					<div class="ty-range-model-pricing__finance-row" data-ng-show="driveawayPrice.financeInfoAvailable">
-						<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--weekly" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-							<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-								<h4 class="ty-range-model-pricing-item__label">
-									<a data-ng-if="financingOptions.leftLink" data-ng-href="{{financingOptions.leftLink}}" data-ng-bind-html="financingOptions.leftText | formatSuper"></a>
-									<span data-ng-if="!financingOptions.leftLink" data-ng-bind-html="financingOptions.leftText | formatSuper"></span>
-								</h4>
-								<p class="ty-range-model-pricing-item__body">
-									<span class="ty-range-model-pricing-item__value">
-										<span data-ng-bind-html="financingOptions.priceWeek | formatSuper"></span><small data-ng-bind-html="financingOptions.priceWeekText | formatSuper"></small>
-									</span>                                            
-								</p>
-							</div>
-
-						</div>
-						<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--comparison-rate" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-							<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-								<h4 class="ty-range-model-pricing-item__label">
-									<a data-ng-if="financingOptions.midLink" data-ng-href="{{financingOptions.midLink}}" data-ng-bind-html="financingOptions.midText | formatSuper"></a>
-									<span data-ng-if="!financingOptions.midLink" data-ng-bind-html="financingOptions.midText | formatSuper"></span>
-								</h4>
-								<p class="ty-range-model-pricing-item__body">
-									<span class="ty-range-model-pricing-item__value">
-										<span data-ng-bind-html="financingOptions.compRate | formatSuper"></span><small data-ng-bind-html="financingOptions.compRateText | formatSuper"></small>
-									</span>                                            
-								</p>
-							</div>
-
-						</div>
-						<div class="ty-range-model-pricing__finance-col ty-range-model-pricing__finance-col--loan-term" data-ng-show="!driveawayPrice.loading && !(driveawayPrice.serverError || driveawayPrice.dataError)">
-
-							<div class="ty-range-model-pricing-item ty-range-model-pricing-item--small">
-								<h4 class="ty-range-model-pricing-item__label">
-									<a data-ng-if="financingOptions.rightLink" data-ng-href="{{financingOptions.rightLink}}" data-ng-bind-html="financingOptions.rightText | formatSuper"></a>
-									<span data-ng-if="!financingOptions.rightLink" data-ng-bind-html="financingOptions.rightText | formatSuper"></span>
-								</h4>
-								<p class="ty-range-model-pricing-item__body">
-									<span class="ty-range-model-pricing-item__value">
-										<span data-ng-bind-html="financingOptions.loanTerm | formatSuper"></span><small data-ng-bind-html="financingOptions.loanTermText | formatSuper"></small>
-									</span>                                            
-								</p>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="ty-range-model-pricing__location-fineprint">
-
-						<div class="ty-icon-label">
-							<span class="ty-icon-label__icon">
-								<span class="ty-range-model-pricing__location-fineprint-icon">
-									<svg class="ty-svg-icon ty-svg-icon--replace-fill" width="17px" height="23px" viewBox="0 0 17 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-										<path d="M8.5,5.32907052e-15 C3.81779661,5.32907052e-15 0,3.80074442 0,8.46203474 C0,12.191067 5.25847458,19.0037221 7.49152542,21.7287841 C7.70762712,22.0156328 8.13983051,22.2307692 8.5,22.2307692 C8.86016949,22.2307692 9.29237288,22.0873449 9.50847458,21.7287841 C11.7415254,19.0037221 17,12.191067 17,8.46203474 C17,3.80074442 13.1822034,5.32907052e-15 8.5,5.32907052e-15 Z M11.0932203,7.81662531 C11.0932203,9.25086849 9.94067797,10.398263 8.5,10.398263 C7.05932203,10.398263 5.90677966,9.25086849 5.90677966,7.81662531 C5.90677966,6.38238213 7.05932203,5.23498759 8.5,5.23498759 C9.94067797,5.23498759 11.0932203,6.38238213 11.0932203,7.81662531 Z" id="Shape"></path>
-									</svg>
-								</span>
-							</span>
-							<span class="ty-icon-label__label">
-								Prices based on <a class="ty-range-model-pricing__location-fineprint-label" ng-click="showChangeLocationModal()" data-ng-cloak>{{driveawayPrice.suburb}}, {{driveawayPrice.state}} {{driveawayPrice.postcode}}</a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 
 </div>
@@ -1364,7 +1125,7 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 
 					">
 					<div class="ty-typography__content  ">
-						<p>A Toyota hybrid battery will never run out of charge because it continuously charges as you drive.</p>            </div>
+						<p>A Toyota hybrid battery will never run out of charge because it continuously charges as you drive.</p></div>
 					</div>
 
 				</div>
@@ -1379,10 +1140,7 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 <div class="expanding-field nested" data-ty-expanding-field="">
 	<label for="expanding-field" class="">What happens if my 12volt battery runs out of charge?</label>
 	<div class="content" style="display: none;&#39;">
-		<section class="ty-layout
-
-
-		">
+		<section class="ty-layout">
 		<div class="ty-layout__container">
 			<div class="ty-layout__row">
 				<div class="ty-layout__col ty-layout__col--12">
@@ -1413,10 +1171,7 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 <div class="expanding-field nested" data-ty-expanding-field="">
 	<label for="expanding-field" class="">Does it cost more to service a hybrid?</label>
 	<div class="content" style="display: none;&#39;">
-		<section class="ty-layout
-
-
-		">
+		<section class="ty-layout">
 		<div class="ty-layout__container">
 			<div class="ty-layout__row">
 				<div class="ty-layout__col ty-layout__col--12">
@@ -1477,154 +1232,6 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 </div>
 </div>
 
-
-
-<div data-ty-modal data-modal-title="Location" data-modal-id="change-location">
-	<div class="location-info" data-ty-location-change data-dealer-selection="True" max-results="1000">
-		<div class="location-info__foreground" data-ng-show="showLanding">
-			<div class="location-info__marker-container">
-				<img class="location-info__marker" src="Assets/Toyota/MainSite/images/icons/Location.svg" />
-			</div>
-			<h2 class="location-info__heading">Set your location to get accurate prices.</h2>
-		</div>
-		<div class="location-info__tagcont" data-ng-form="locForm" data-ng-class="{'validation-failed': !locForm.findPostcode.$valid && locForm.findPostcode.$touched}">
-			<span class="display-message" data-ng-show="!showLanding">Search postcode or suburb</span>
-			<span class="message">Please enter a valid postcode or suburb</span>
-			<tags-input id="findPostcode"
-			name="findPostcode"
-			data-ng-model="tags"
-			class="ty-autocomplete"
-			add-on-paste="true"
-			placeholder="{{ tags.length ? '' : &quot;Search&quot;}}"
-			text="text"
-			data-on-tag-added="onTagAdd($tag)"
-			data-replace-spaces-with-dashes="fal se"
-			data-enable-editing-last-tag="true"
-			data-add-from-autocomplete-only="true"
-			data-scroll-top-on-focus
-			data-display-property="text"
-			data-allow-leftover-text="false"
-			data-add-on-comma="false"
-			min-tags="1">
-			<auto-complete source="loadTags($query)" data-load-on-empty="true" data-min-length="1" data-debounce-delay="500" highlight-matched-text="false" max-results-to-show="1000"></auto-complete>
-			<img class="searchicon" data-ng-hide="tags.length > 0" src="Assets/Toyota/MainSite/images/icons/Magnifyingglass.svg" />
-
-			<span class="location-info__loading" data-ng-show="loading">
-				<ty-loading-spinner medium></ty-loading-spinner>
-			</span>
-		</tags-input>
-	</div>
-	<div class="location-info__geo" data-ng-show="showLanding || errorInGeoLocation">
-		<span class="location-info__geo-icon">
-			<img src="Assets/Toyota/MainSite/images/icons/Alt_Location.svg" />
-		</span>
-		<span class="location-info__geo-link-error" data-ng-show="errorInGeoLocation">Unable to determine your location. Please enter it above.</span>
-		<span class="location-info__geo-link" data-ng-show="!isGeoLocated() && !errorInGeoLocation" data-ng-click="onCurrentLocation()">Or use current location</span>
-		<span class="location-info__geoload" data-ng-show="geoLoading">
-			<ty-loading-spinner small></ty-loading-spinner>
-		</span>
-	</div>
-	<div class="location-info__location-set" data-ng-show="locationSet && dealerSelection">
-		<p>Location set</p>
-		<div class="tick-icon">
-			<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-			<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				<!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-				<title>green_tick</title>
-				<desc>Created with Sketch.</desc>
-				<defs></defs>
-				<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-					<g id="green_tick">
-						<g id="Tick" transform="translate(1.000000, 1.000000)">
-							<circle id="Oval-3" stroke="#409038" fill="#409038" cx="12.5" cy="12.5" r="12.5"></circle>
-							<polyline id="Path-2" stroke="#FFFFFF" stroke-width="2" points="7 12.4273163 10.4959382 15.4166667 18 9"></polyline>
-						</g>
-					</g>
-				</g>
-			</svg>
-		</div>
-	</div>
-	<div class="location-info__dealership" data-ng-show="selectDealership() || delaySwitch">
-		<div class="location-info__dealership-header">
-			<a data-ng-click="closeModal('change-location')">SKIP</a>
-			<h3>SELECT A DEALERSHIP</h3>
-		</div>
-		<div data-ng-repeat="dealer in dealers | limitTo:2" class="location-info__dealership-select" data-ng-click="saveDealer($index)" data-ng-show="(selectDealership() || delaySwitch) && !loading">
-			<h4>{{ dealer.name.toUpperCase() }}</h4>
-			<p>{{ ( dealer.city + " " + dealer.state + ", " + dealer.postCode ).toUpperCase() }}</p>
-		</div>
-	</div>
-	<div class="location-info__dealership" data-ng-show="selectedDealership() && !delaySwitch">
-		<div class="location-info__dealership-header">
-			<a data-ng-click="changeDealer()">CHANGE</a>
-			<h3>SELECTED DEALERSHIP</h3>
-		</div>
-		<div class="location-info__dealership-selected">
-			<h4>{{ dealer.name.toUpperCase() }}</h4>
-			<div class="item" data-ng-if="dealer.address !== ''">
-				<div class="icon">
-					<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-					<svg class="marker" width="11px" height="15px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-						<title>grey_location</title>
-						<desc>Created with Sketch.</desc>
-						<defs></defs>
-						<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="grey_location" fill="#4D4F53">
-								<path d="M5.5,0 C2.47033898,0 8.8817842e-15,2.45930521 8.8817842e-15,5.47543424 C8.8817842e-15,7.88833747 3.40254237,12.2965261 4.84745763,14.0598015 C4.98728814,14.2454094 5.26694915,14.3846154 5.5,14.3846154 C5.73305085,14.3846154 6.01271186,14.2918114 6.15254237,14.0598015 C7.59745763,12.2965261 11,7.88833747 11,5.47543424 C11,2.45930521 8.52966102,0 5.5,0 Z M7.1779661,5.05781638 C7.1779661,5.98585608 6.43220339,6.72828784 5.5,6.72828784 C4.56779661,6.72828784 3.8220339,5.98585608 3.8220339,5.05781638 C3.8220339,4.12977667 4.56779661,3.38734491 5.5,3.38734491 C6.43220339,3.38734491 7.1779661,4.12977667 7.1779661,5.05781638 Z" id="Shape-Copy"></path>
-							</g>
-						</g>
-					</svg>
-				</div>
-				<a href="http://maps.google.com/?q={{ dealerFullAddressMaps() }}"  target="_blank">{{ dealerFullAddress() }}</a>
-			</div>
-			<div class="item" data-ng-if="dealer.email !== ''">
-				<div class="icon">
-					<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-					<svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-						<title>email</title>
-						<desc>Created with Sketch.</desc>
-						<defs></defs>
-						<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="email" fill="#4D4F53">
-								<g id="noun_71774_cc">
-									<g id="Group">
-										<path d="M15,1.5625 C15,1.26625 14.911875,0.9925 14.76875,0.75625 L9.83875,6.0525 L14.756875,10.515 C14.9082812,10.27375 14.9995312,9.9925 14.9995312,9.688125 L15,1.5625 Z" id="Shape"></path>
-										<path d="M6.2925,6.35078125 C6.935,7.04953125 8.063125,7.05125 8.70875,6.349375 L14.344375,0.294375 C14.0875,0.11125 13.775625,-4.4408921e-16 13.436875,-4.4408921e-16 L1.561875,-4.4408921e-16 C1.25875,-4.4408921e-16 0.976875,0.090625 0.736875,0.24125 L6.2925,6.35078125 Z" id="Shape"></path>
-										<path d="M9.414375,6.509375 L9.1675,6.77359375 C8.72625,7.25375 8.13390625,7.51875 7.5,7.51875 C6.86625,7.51875 6.27375,7.253125 5.83125,6.7725 L5.59125,6.50875 L0.720625,11 C0.964375,11.156875 1.251875,11.25 1.5625,11.25 L13.4375,11.25 C13.76875,11.25 14.075625,11.145 14.32875,10.9679687 L9.414375,6.509375 Z" id="Shape"></path>
-										<path d="M0.283125,0.670625 C0.105625,0.92375 0,1.230625 0,1.5625 L0,9.6875 C0,10.0125 0.1,10.314375 0.270625,10.5642187 L5.170625,6.04609375 L0.283125,0.670625 Z" id="Shape"></path>
-									</g>
-								</g>
-							</g>
-						</g>
-					</svg>
-				</div>
-				<a href="mailto:{{ dealer.email }}" data-rel="external">{{ dealer.email }}</a>
-			</div>
-			<div class="item" data-ng-if="dealer.telephone !== ''">
-				<div class="icon">
-					<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-					<svg class="mobile" width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-						<title>phone</title>
-						<desc>Created with Sketch.</desc>
-						<defs></defs>
-						<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="phone" fill="#4D4F53">
-								<g id="noun_850924_cc">
-									<path d="M3.16913841,5.33626537 C4.50443024,7.50073366 5.39463537,8.36658122 7.62013549,9.66523366 L9.40053463,7.93364951 C10.3097499,8.15956415 11.4575262,8.46966171 12.3787855,8.46599951 C12.6858709,8.46362146 12.9917101,8.76228854 12.9999968,9.04759098 L12.9792983,11.7489593 C12.97803,12.0477056 12.6697271,12.3475934 12.3567838,12.3658251 C4.68549805,12.3789837 0.250784268,8.06575805 0.00147906707,0.590366463 C-0.0239834939,0.301522317 0.284363902,0.001625 0.591441341,0.000388414634 L3.63351268,0.000388414634 C3.96939622,-0.0122310976 4.27524183,0.285223171 4.34813378,0.466902927 C4.27026061,1.48001671 4.71194829,2.71581098 4.94954707,3.60523927 L3.16913841,5.33626537 Z" id="Shape"></path>
-								</g>
-							</g>
-						</g>
-					</svg>
-				</div>
-				<a href="tel:{{ dealer.telephone | removeSpaces }}" data-rel="external">{{ dealer.telephone }}</a>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
 <div class="expanding-field-v2__background">    
 	<section class="container">
 		<div class="row">
@@ -1671,20 +1278,20 @@ data-ty-owl-carousel-nav-next-html-src="#owl-carousel-default-next-html">
 		</div>
 	</section>
 </div>
-			<script src="Assets/Toyota/Global/Js/vendor/bower_components/jquery/dist/jquery.js"></script>
-			<script src="bundles/toyota/mainsite/js-bootstrap"></script>
-			<script src="bundles/toyota/mainsite/js-angular-1"></script>
-			<script src="bundles/toyota/mainsite/js-angular-vM1"></script>
-			<script src="bundles/toyota/mainsite/javascript-angular-v.html"></script>
-			<script src="bundles/toyota/mainsite/javascript-lib-min-jWyk8VEc1"></script>
-			<script src="bundles/toyota/mainsite/javascript-lib-unm.html"></script>
-			<script src="bundles/toyota/mainsite/javascript-vendor-min_xoSx1nQ1"></script>
-			<script src="bundles/toyota/mainsite/javascript-vendor-unmin_hokpY1"></script>
-			<script src="bundles/toyota/mainsite/javascript-custom-unmin-d7nY81"></script>
+<script src="Assets/Toyota/Global/Js/vendor/bower_components/jquery/dist/jquery.js"></script>
+<script src="bundles/toyota/mainsite/js-bootstrap"></script>
+<script src="bundles/toyota/mainsite/js-angular-1"></script>
+<script src="bundles/toyota/mainsite/js-angular-vM1"></script>
+<script src="bundles/toyota/mainsite/javascript-angular-v.html"></script>
+<script src="bundles/toyota/mainsite/javascript-lib-min-jWyk8VEc1"></script>
+<script src="bundles/toyota/mainsite/javascript-lib-unm.html"></script>
+<script src="bundles/toyota/mainsite/javascript-vendor-min_xoSx1nQ1"></script>
+<script src="bundles/toyota/mainsite/javascript-vendor-unmin_hokpY1"></script>
+<script src="bundles/toyota/mainsite/javascript-custom-unmin-d7nY81"></script>
 
 
 
-			<div class="ty-global-breakpoint-sensor"></div>
-		</body>
+<div class="ty-global-breakpoint-sensor"></div>
+</body>
 
-		</html>
+</html>
